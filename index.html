@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Piscina - Estilo Praia</title>
+  <!-- Google Fonts: Poppins e Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Elementos de Decoração Praia -->
+  <div class="sun"></div>
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+
+  <!-- Header / App Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo">
+        <i data-lucide="waves" class="icon-waves"></i>
+        <span>PiscinaTropical</span>
+      </div>
+      <div class="badge-beach">
+        <i data-lucide="sun"></i>
+        <span>Modo Verão</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Seção do Formulário / Perguntas -->
+    <section class="card question-card">
+      <div class="card-header">
+        <h2 class="card-title">
+          <i data-lucide="compass" class="icon-title"></i>
+          Planeje sua Piscina
+        </h2>
+        <p class="card-subtitle">Responda às perguntas para gerar seu fluxograma personalizado</p>
+      </div>
+
+      <div class="questions-list">
+
+        <!-- Pergunta 1 -->
+        <div class="form-group">
+          <label class="form-label" for="orcamento">
+            <span class="step-num">01</span> Quanto você pode investir na piscina?
+          </label>
+          <div class="input-wrapper">
+            <span class="currency-prefix">R$</span>
+            <input type="number" id="orcamento" class="form-input" placeholder="Ex: 25000" min="0" step="1000">
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="form-group">
+          <label class="form-label" for="tipoPiscina">
+            <span class="step-num">02</span> Qual piscina você quer ter?
+          </label>
+          <select id="tipoPiscina" class="form-select">
+            <option value="">Selecione o material...</option>
+            <option value="fibra">Piscina de Fibra (Rápida e Prática)</option>
+            <option value="vinil">Piscina de Vinil (Versátil)</option>
+            <option value="alvenaria">Piscina de Alvenaria / Azulejo (Premium)</option>
+            <option value="plastico">Piscina Estruturada / Plástico (Econômica)</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="form-group">
+          <label class="form-label" for="tamanho">
+            <span class="step-num">03</span> Quão grande é essa piscina?
+          </label>
+          <select id="tamanho" class="form-select">
+            <option value="">Selecione o tamanho...</option>
+            <option value="pequena">Pequena (até 4m x 2,5m)</option>
+            <option value="media">Média (até 7m x 3m)</option>
+            <option value="grande">Grande (acima de 8m x 4m)</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="form-group">
+          <label class="form-label" for="profundidade">
+            <span class="step-num">04</span> Qual a profundidade dela?
+          </label>
+          <select id="profundidade" class="form-select">
+            <option value="">Selecione a profundidade...</option>
+            <option value="rasa">Rasa (1,0m a 1,2m) - Ideal para crianças/relaxar</option>
+            <option value="padrao">Padrão (1,4m a 1,5m) - Ideal para nadar e uso geral</option>
+            <option value="funda">Funda (1,6m a 2,0m+) - Para mergulhos</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="form-group">
+          <label class="form-label" for="valorEstimado">
+            <span class="step-num">05</span> Qual é o valor orçado dessa piscina?
+          </label>
+          <div class="input-wrapper">
+            <span class="currency-prefix">R$</span>
+            <input type="number" id="valorEstimado" class="form-input" placeholder="Ex: 22000" min="0" step="1000">
+          </div>
+        </div>
+
+      </div>
+
+      <button id="btnLimpar" class="btn-clear">
+        <i data-lucide="rotate-ccw"></i>
+        Reiniciar Questionário
+      </button>
+    </section>
+
+    <!-- Seção do Fluxograma -->
+    <section class="card flowchart-card">
+      <div class="card-header">
+        <h2 class="card-title">
+          <i data-lucide="git-merge" class="icon-title"></i>
+          Fluxograma do Seu Projeto
+        </h2>
+        <p class="card-subtitle">Visualização dinâmica atualizada conforme suas escolhas</p>
+      </div>
+
+      <div class="flowchart-container" id="flowchartArea">
+        <!-- Renderizado via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
